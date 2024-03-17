@@ -1,3 +1,4 @@
+/* Common styles for both modes */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 * {
@@ -8,52 +9,13 @@
 }
 
 body {
-  background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.bg-image {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60%;
-  z-index: -1;
-  background-image: url('./assets/wave.png');
-  background-size: cover;
-  background-position: center;
-}
-
-.popcat {
-  position: absolute;
-  top: 20%;
-  left: 80%;
-  transform: translate(-50%, -50%);
-  font-size: 24px;
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-  background-color: black;
-  border: black solid 1px;
-  border-radius: 10px;
-  padding: 7px;
-  z-index: 1;
-}
-
-.clicked {
-  position: absolute;
-  top: 26%;
-  left: 80%;
-  transform: translate(-50%, -50%);
-  font-size: 24px;
-  color: rgb(255, 255, 255);
-  padding: 7px;
-  z-index: 1;
-}
-
-.popcat:active {
-  background-color: green;
+  min-height: 100vh;
+  transition: background-color 0.5s ease-in-out;
+  /* Set a minimum height to ensure content is vertically centered */
+  /* Common background color for both modes */
 }
 
 .App {
@@ -61,13 +23,12 @@ body {
 }
 
 h1 {
-  color: #ffffff;
   margin-bottom: 0.5rem;
   font-size: 1.75rem;
+  font-family: 'Roboto', sans-serif;
 }
 
 .TodoWrapper {
-  background: black;
   margin-top: 5rem;
   margin-bottom: 20vh;
   padding: 2rem;
@@ -82,36 +43,37 @@ h1 {
 
 .todo-input {
   outline: none;
-  background: none;
-  border: 1px solid green;
   padding: 0.5rem 1rem;
   margin-top: 1rem;
   margin-bottom: 2rem;
   width: 300px;
-  color: #fff;
 }
 
 .todo-input::placeholder {
-  color: #ffffff6d;
+  /* Placeholder styles */
 }
 
 .todo-btn {
-  background: green;
-  color: #fff;
-  border: none;
   padding: 0.55rem;
   cursor: pointer;
+  border-radius: 3px;
 }
 
 .Todo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: green;
-  color: #fff;
   padding: 0.75rem 1rem;
-  border-radius: 5px;
+  border-radius: 8px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.Todo:hover {
+  background-color: #f0f0f0; /* Light gray background on hover */
+  transform: translateY(-2px);
 }
 
 .fa-trash {
@@ -119,12 +81,11 @@ h1 {
 }
 
 .incompleted {
-  color: #fff;
   cursor: pointer;
 }
 
 .completed {
-  color: black;
+  color: #777;
   text-decoration: line-through;
   cursor: pointer;
 }
@@ -135,23 +96,169 @@ h1 {
 
 .delete-icon {
   cursor: pointer;
-  color: rgb(205, 42, 42);
 }
+
+.delete-icon:hover {
+  transform: scale(1.1);
+}
+
 
 .footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #333;
-  color: #fff;
   text-align: center;
   padding: 1rem 0;
+  
 }
+
+.footer a {
+  color: #fff; /* White color for links */
+  text-decoration: none; /* Remove underline */
+  margin: 0 10px; /* Add some spacing between links */
+}
+
 
 .contributors {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, auto);
   gap: 2.5px;
+}
+
+/* Light mode styles */
+.TodoWrapper {
+  background: #fff;
+  /* White wrapper background */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  /* Soft shadow effect */
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.todo-input {
+  background: #f6f8fa;
+  /* Soft gray input background */
+  border: 1px solid #ccc;
+  /* Light gray border */
+  color: #333;
+  /* Dark gray text */
+}
+
+.todo-input::placeholder {
+  color: #999;
+  /* Light gray placeholder text */
+}
+
+.todo-btn {
+  background: #2196f3;
+  /* Blue button */
+  color: #fff;
+  border: none;
+  
+}
+
+.todo-btn:hover {
+  background-color: #0d6efd; /* Darker blue color on hover */
+}
+
+
+.Todo {
+  background: #e0f2f1;
+  transition: background-color 0.3s ease-in-out;
+  /* Light green background */
+}
+
+.delete-icon {
+  color: #f44336;
+  /* Red for delete icon */
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #222;
+  color: #eee; /* Light gray text color */
+}
+
+
+.dark-mode .App {
+  color: #eee;
+  /* Adjust text color in dark mode */
+}
+
+.dark-mode .TodoWrapper {
+  background: #333;
+  /* Dark gray wrapper background */
+  color: #eee;
+  /* Adjust text color in dark mode */
+}
+
+.dark-mode .todo-input {
+  background: #444;
+  /* Adjust input background color in dark mode */
+  border-color: #666;
+  /* Adjust input border color in dark mode */
+  color: #eee; /* Adjusted font color in dark mode */
+}
+
+
+.dark-mode .todo-input::placeholder {
+  color: #888; /* Adjusted placeholder text color in dark mode */
+  opacity: 0.7; /* Reduced opacity for placeholder text in dark mode */
+}
+
+
+.dark-mode .todo-btn {
+  background: #4CAF50;
+  /* Adjust button background color in dark mode */
+}
+
+.dark-mode .Todo {
+  background: #444;
+  /* Adjust todo item background color in dark mode */
+}
+
+.dark-mode .delete-icon {
+  color: #F44336;
+  /* Adjust delete icon color in dark mode */
+}
+
+.dark-mode .footer {
+  background-color: #222;
+  /* Adjust footer background color in dark mode */
+}
+
+.dark-mode-button {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 0.55rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.dark-mode-button:hover {
+  background-color: #777;
+}
+
+@media screen and (max-width: 600px) {
+  .todo-input {
+    width: 100%;
+  }
 }

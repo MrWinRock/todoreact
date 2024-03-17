@@ -4,18 +4,22 @@ import { TodoWrapper } from "./components/TodoWrapper";
 import Footer from "./components/Footer";
 
 function App() {
-  const [clicks, setClicks] = useState(null);
+  const [darkMode, setDarkMode] = useState(false);
 
-  const handleClick = () => {
-    setClicks(clicks + 1);
-  };
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    if (darkMode) {
+      document.body.classList.remove('dark-mode');
+    } else {
+      document.body.classList.add('dark-mode');
+    }
+  }
 
   return (
-    <div className="App">
-      <div className="bg-image">
-      </div>
-        <div className="popcat" onClick={handleClick}>Click Me!</div>
-        <div className="clicked">{clicks}</div>
+    <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
+        <button className="dark-mode-button" onClick={toggleDarkMode}>
+          {darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+        </button>
         <TodoWrapper />
         <Footer />
     </div>
