@@ -72,7 +72,8 @@ h1 {
 }
 
 .Todo:hover {
-  background-color: #f0f0f0; /* Light gray background on hover */
+  background-color: #f0f0f0;
+  /* Light gray background on hover */
   transform: translateY(-2px);
 }
 
@@ -110,21 +111,16 @@ h1 {
   width: 100%;
   text-align: center;
   padding: 1rem 0;
-  
+
 }
 
 .footer a {
-  color: #fff; /* White color for links */
-  text-decoration: none; /* Remove underline */
-  margin: 0 10px; /* Add some spacing between links */
-}
-
-
-.contributors {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, auto);
-  gap: 2.5px;
+  color: #fff;
+  /* White color for links */
+  text-decoration: none;
+  /* Remove underline */
+  margin: 0 10px;
+  /* Add some spacing between links */
 }
 
 /* Light mode styles */
@@ -140,6 +136,7 @@ h1 {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -165,11 +162,12 @@ h1 {
   /* Blue button */
   color: #fff;
   border: none;
-  
+
 }
 
 .todo-btn:hover {
-  background-color: #0d6efd; /* Darker blue color on hover */
+  background-color: #0d6efd;
+  /* Darker blue color on hover */
 }
 
 
@@ -192,7 +190,8 @@ h1 {
 /* Dark mode styles */
 body.dark-mode {
   background-color: #222;
-  color: #eee; /* Light gray text color */
+  color: #eee;
+  /* Light gray text color */
 }
 
 
@@ -213,13 +212,16 @@ body.dark-mode {
   /* Adjust input background color in dark mode */
   border-color: #666;
   /* Adjust input border color in dark mode */
-  color: #eee; /* Adjusted font color in dark mode */
+  color: #eee;
+  /* Adjusted font color in dark mode */
 }
 
 
 .dark-mode .todo-input::placeholder {
-  color: #888; /* Adjusted placeholder text color in dark mode */
-  opacity: 0.7; /* Reduced opacity for placeholder text in dark mode */
+  color: #888;
+  /* Adjusted placeholder text color in dark mode */
+  opacity: 0.7;
+  /* Reduced opacity for placeholder text in dark mode */
 }
 
 
